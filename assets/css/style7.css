@@ -1,0 +1,155 @@
+.show_mobile {display: none;}
+@media only screen and (max-width: 548px){
+    .show_mobile{display:block !important}
+}
+.show_desktop {
+    display: none;
+}
+@media only screen and (min-width: 549px){
+    .show_desktop{display:block !important}
+}
+.giuseart-nav {
+    position: fixed;
+    left: 13px;
+    background: #fff;
+    border-radius: 5px;
+    width: auto;
+    z-index: 150;
+    bottom: 50px;
+    padding: 10px 0;
+    border: 1px solid #f2f2f2;
+}
+.giuseart-nav ul {list-style: none;padding: 0;margin: 0;}
+.giuseart-nav ul li {list-style: none!important;}
+.giuseart-nav ul>li a {
+    border:none;
+    padding: 3px;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 10px;
+    line-height: 15px;
+    color: #515151;
+    font-weight: 700;
+    max-width: 72.19px;
+    max-height: 54px;
+    text-decoration: none;
+}
+.giuseart-nav li .button {
+    background: transparent;
+}
+.giuseart-nav ul>li a i {
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 36px;
+    height: 36px;
+    display: block;
+    margin: auto;
+    border-radius: 100px;
+}
+.giuseart-nav ul>li a i img{
+    border-radius: 100px;
+}
+.giuseart-nav ul li .button .btn_phone_txt {
+    position: relative; 
+    top:35px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: none;
+}
+.giuseart-nav ul li .button .phone_animation i {
+    display: inline-block;
+    width: 27px;
+    font-size: 26px;
+    margin-top: 12px;
+}
+.giuseart-nav ul>li a.chat_animation svg {
+    margin: -13px 0 -20px;
+}
+.giuseart-nav ul>li a i.ticon-phone-w {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.giuseart-nav ul>li:not(.show_mobile) a i.ticon-phone-w{
+    background-color: #6cb917 !important;
+    padding: 5px !important;
+    border-radius: 100px;
+    background-size: calc( 100% - 9px) !important;
+    background-position: center center !important;
+}
+.giuseart-nav ul li .button .btn_phone_txt {
+    position: relative;
+}
+
+
+@media only screen and (max-width: 548px){
+    .hide_mobile{display: none !important;}
+    .giuseart-nav li .chat_animation{display:block !Important}     
+    .giuseart-nav li .button .phone_animation {box-shadow: none;
+        position: absolute;
+        top: -16px;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #6cb917;
+        line-height: 15px;
+        border: 2px solid white;
+    }
+    .giuseart-nav ul>li a{padding:0; margin:0 auto}
+    .giuseart-nav {
+        background: white;
+        width: 100%; border-radius:0;
+        color: #fff;
+        height: 60px;
+        line-height: 50px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        padding: 5px;
+        margin: 0;
+        box-shadow: 0 4px 10px 0 #000;
+    }
+    .giuseart-nav li {
+        float: left;
+        width: 20%;
+        list-style: none;
+        height: 50px;
+    }    
+}
+
+.giuseart-nav ul>li a i.ticon-gmail{
+    background-image: url("../icons/images/gmail.webp");
+}
+.giuseart-nav ul>li a i.ticon-map{
+    background-image: url("../icons/images/map.webp");
+}
+.giuseart-nav ul>li a i.ticon-messenger{
+    background-image: url("../icons/images/messenger.webp");
+}
+.giuseart-nav ul>li a i.ticon-phone-gif{
+    background-image: url("../icons/images/phone-gif.webp");
+}
+.giuseart-nav ul>li a i.ticon-phone-w{
+    background-image: url("../icons/images/phone-w.webp");
+}
+.giuseart-nav ul>li a i.ticon-sms{
+    background-image: url("../icons/images/sms.webp");
+}
+.giuseart-nav ul>li a i.ticon-top{
+    background-image: url("../icons/images/top.webp");
+}
+.giuseart-nav ul>li a i.ticon-zalo{
+    background-image: url("../icons/images/zalo.webp");
+}
+.giuseart-nav ul>li a i.ticon-call2{
+    background-image: url("../icons/images/call2.webp");
+}
+.giuseart-nav ul>li a i.ticon-zalo2{
+    background-image: url("../icons/images/zalo2.webp");
+}
+.giuseart-nav ul>li a i.ticon-messenger2{
+    background-image: url("../icons/images/messenger2.webp");
+}

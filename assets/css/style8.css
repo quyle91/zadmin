@@ -1,0 +1,219 @@
+.show_mobile {display: none !important;}
+@media only screen and (max-width: 548px){
+    .show_mobile{display:flex !important}
+}
+.show_desktop {display: none;}
+@media only screen and (min-width: 549px){
+    .show_desktop{display:flex !important}
+}
+#cta-icon {
+	position: fixed;
+	width: 60px;
+	right: 0;
+	top: 50%;
+	z-index: 2000;
+	background: #fff;
+	box-shadow: -2px 0 10px rgb(0 0 0 / 10%);
+	border-radius: 10px 0 0 10px;
+	-webkit-border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+#cta-icon a {
+	padding: 15px 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	text-decoration: none;
+}
+
+
+#cta-icon a:not(:last-child) {
+	border-bottom: 1px solid #dee2e6;
+}
+#cta-icon a.cta-phone i {
+	color: #dc3545;
+	-webkit-animation: swing ease-in-out .2s infinite alternate;
+	-moz-animation: swing ease-in-out .2s infinite alternate;
+	-ms-animation: swing ease-in-out .2s infinite alternate;
+	-o-animation: swing ease-in-out .2s infinite alternate;
+	animation: swing ease-in-out .2s infinite alternate;
+}
+#cta-icon a i {
+	font-size: 45px;
+	color: #78bc1c;
+	padding: 0;
+	line-height: 28px;
+}
+#cta-icon a i img{
+	border-radius: 100px;
+}
+#cta-icon .cs-ring {
+	position: absolute;
+	border: 1px solid #dc3545;
+	border-radius: 50%;
+	width: 22px;
+	height: 22px;
+	-webkit-animation: pulsate 1s ease-out;
+	-moz-animation: pulsate 1s ease-out;
+	-ms-animation: pulsate 1s ease-out;
+	-o-animation: pulsate 1s ease-out;
+	animation: pulsate 1s ease-out;
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-ms-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+#cta-icon a:not(:last-child) {
+	border-bottom: 1px solid #dee2e6;
+}
+
+#cta-icon a.ico_phone-gif {	
+	background-size: 90%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	padding: 0;
+}
+#cta-icon a i{
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+#cta-icon a .ico_gmail {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+#cta-icon a .ico_top {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+#cta-icon a .ico_sms {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+#cta-icon a .ico_messenger {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+#cta-icon a .ico_zalo {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+#cta-icon a .ico_map {	
+	background-size: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;	
+	width: 35px;
+	height: 35px;
+	display: inline-block;
+}
+
+@media only screen and (max-width: 548px) {
+	#cta-icon a:nth-child(5)~a{
+		display: none;
+	}
+	#cta-icon {
+		position: fixed;
+		width: 100%;
+		right: 0;
+		bottom: 0 !important;
+		top: auto;
+		border-radius: 0;
+		display: block;
+		-webkit-transform: inherit;
+	}
+	#cta-icon a,
+	#cta-icon a.cta-phone {
+		float: left;
+		width: 20% !important;
+		margin: 0;
+	}
+	#cta-icon a:not(:last-child) {
+		border-bottom: 0;
+	}
+	#cta-icon a.cta-phone {
+		width: 60px;
+		height: 64px;
+		display: inline-block;
+		padding: 11px 0;
+		background-size: 54px;
+	}
+	#cta-icon a .ico_email {
+		width: 35px;
+		height: 35px
+	}
+}
+
+#cta-icon .ico_gmail{
+	background-image: url("../icons/images/gmail.webp");
+}
+#cta-icon .ico_map{
+	background-image: url("../icons/images/map.webp");
+}
+#cta-icon .ico_messenger{
+	background-image: url("../icons/images/messenger.webp");
+}
+#cta-icon .ico_phone-gif{
+	background-image: url("../icons/images/phone-gif.webp");
+}
+#cta-icon .ico_phone-w{
+	background-image: url("../icons/images/phone-w.webp");
+}
+#cta-icon .ico_sms{
+	background-image: url("../icons/images/sms.webp");
+}
+#cta-icon .ico_top{
+	background-image: url("../icons/images/top.webp");
+}
+#cta-icon .ico_zalo{
+	background-image: url("../icons/images/zalo.webp");
+}
+#cta-icon .ico_call2{
+	background-image: url("../icons/images/call2.webp");
+}
+#cta-icon .ico_zalo2{
+	background-image: url("../icons/images/zalo2.webp");
+}
+#cta-icon .ico_messenger2{
+	background-image: url("../icons/images/messenger2.webp");
+}

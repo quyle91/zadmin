@@ -85,12 +85,22 @@ class Zadmin_Fields extends Zadmin {
 				require ZADMIN_DIR."/fields/fields-elementor.php"
 			]
 		];
-		foreach ($arr as $priority => $datas) {
-			foreach ($datas as $data) {
-				add_filter( 'zadmin_acf_fields', function($fields)use($data){
-					$fields['fields'] = array_merge( $fields['fields'], $data);
+		foreach ($arr as $priority => $groups) {
+			foreach ($groups as $group) {
+
+				add_filter( 'zadmin_fields', function($fields)use($group){
+					$fields['fields'] = array_merge( $fields['fields'], $group);
 					return $fields;
 				},$priority );
+				echo "<pre>";print_r($group);echo "</pre>";
+				if($group['type'] == 'group'){
+					
+					add_filter( 'zadmin_fields_groups', function($groups_name)use($group){
+
+						$groups_name[] = $group['name'];
+						return $groups_name;
+					},$priority );
+				}
 			}
 		}
 	}
@@ -130,7 +140,7 @@ class Zadmin_Fields extends Zadmin {
 	        'description' => '',
 	        'show_in_rest' => 0,
 	    );
-	    $fields = apply_filters( 'zadmin_acf_fields', $fields );
+	    $fields = apply_filters( 'zadmin_fields', $fields );
 	    return $fields;
 	}
 }

@@ -6,8 +6,12 @@ class Zadmin_ACF extends Zadmin {
 	
 	function __construct() {
 		$this->create_options_page();
-
+        add_filter( 'acf/settings/show_admin', [$this,'hide_custom_fields_menu'],10,1 );
 	}
+
+    function hide_custom_fields_menu(){
+        return false;
+    }
 
     function create_options_page(){
         if(function_exists('acf_add_options_page')):
@@ -42,4 +46,5 @@ class Zadmin_ACF extends Zadmin {
     }
 }
 
-new Zadmin_ACF;
+$a = new Zadmin_ACF;
+echo "<pre>";print_r($a);echo "</pre>";

@@ -82,21 +82,26 @@ class Zadmin_Fields extends Zadmin {
 				require ZADMIN_DIR."/fields/fields-flatsome-support.php",
 			],
 			120=>[
-				require ZADMIN_DIR."/fields/fields-elementor.php"
+				require ZADMIN_DIR."/fields/fields-elementor.php",
+				require ZADMIN_DIR."/fields/fields-elementor-message.php"
 			]
 		];
 		foreach ($arr as $priority => $groups) {
 			foreach ($groups as $group) {
 
 				add_filter( 'zadmin_fields', function($fields)use($group){
-					$fields['fields'] = array_merge( $fields['fields'], $group);
+					$fields['fields'][] = $group;
 					return $fields;
 				},$priority );
-				echo "<pre>";print_r($group);echo "</pre>";
-				if($group['type'] == 'group'){
-					
-					add_filter( 'zadmin_fields_groups', function($groups_name)use($group){
 
+
+				
+				if($group['type'] == 'tab'){
+					$_tab = $group['name'];
+				}
+
+				if($group['type'] == 'group'){
+					add_filter( 'zadmin_fields_tab_'.$_tab, function($groups_name)use($group){
 						$groups_name[] = $group['name'];
 						return $groups_name;
 					},$priority );
@@ -114,7 +119,7 @@ class Zadmin_Fields extends Zadmin {
 	function get_fields(){
 		$fields = array(
 	        'key' => 'group_641361df50589',
-	        'title' => 'Z Admin',
+	        'title' => 'Z Admin - More settings for your site',
 	        'fields' => array(),
 	        'location' => array(
 	            array(

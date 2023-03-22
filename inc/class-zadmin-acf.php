@@ -3,9 +3,13 @@
  * 
  */
 class Zadmin_ACF extends Zadmin {
+    const TABNAME = 'acf';
+    public $groups_name = [];
+    public $groups_option = [];
 	
 	function __construct() {
-		$this->create_options_page();
+        parent::__construct();
+        $this->create_options_page();
         add_filter( 'acf/settings/show_admin', [$this,'hide_custom_fields_menu'],10,1 );
 	}
 
@@ -46,5 +50,8 @@ class Zadmin_ACF extends Zadmin {
     }
 }
 
-$a = new Zadmin_ACF;
-echo "<pre>";print_r($a);echo "</pre>";
+$Zadmin_ACF = new Zadmin_ACF;
+/*add_action( 'init', function(){
+    global $Zadmin_ACF;
+    echo "<pre>";print_r($Zadmin_ACF);echo "</pre>";
+} );*/

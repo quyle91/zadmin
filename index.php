@@ -39,6 +39,8 @@ define('ZADMIN_BASENAME',     plugin_basename(__FILE__));
 define('ZADMIN_URL',          plugin_dir_url(__FILE__));
 
 
+require ZADMIN_DIR."/functions/function-fields.php";
+
 
 require ZADMIN_DIR."/inc/class-zadmin.php";
 require ZADMIN_DIR."/inc/class-zadmin-fields.php";

@@ -1,4 +1,5 @@
-<?php return array(
+<?php 
+return array(
     'key' => 'field_641363f87fe6d',
     'label' => 'Taxonomy Thumbnails',
     'name' => 'taxonomy',
@@ -28,27 +29,7 @@
                 'class' => '',
                 'id' => '',
             ),
-            'choices' => array(
-                'category' => 'category',
-                'post_tag' => 'post_tag',
-                'nav_menu' => 'nav_menu',
-                'link_category' => 'link_category',
-                'post_format' => 'post_format',
-                'wp_theme' => 'wp_theme',
-                'wp_template_part_area' => 'wp_template_part_area',
-                'block_categories' => 'block_categories',
-                'product_type' => 'product_type',
-                'product_visibility' => 'product_visibility',
-                'product_cat' => 'product_cat',
-                'product_tag' => 'product_tag',
-                'product_shipping_class' => 'product_shipping_class',
-                'pa_attr-a' => 'pa_attr-a',
-                'pa_attr-b' => 'pa_attr-b',
-                'pa_color' => 'pa_color',
-                'pa_size' => 'pa_size',
-                'featured_item_category' => 'featured_item_category',
-                'featured_item_tag' => 'featured_item_tag',
-            ),
+            'choices' => get_taxonomies(),
             'default_value' => array(
             ),
             'return_format' => 'value',
@@ -59,4 +40,4 @@
             'placeholder' => '',
         ),
     ),
-); ?>
+);

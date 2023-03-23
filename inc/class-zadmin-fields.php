@@ -5,61 +5,69 @@
 class Zadmin_Fields extends Zadmin {
 	
 	function __construct() {
-		
 		$this->tao_field_mac_dinh();
 		$this->apply_fields();
 	}
 
 	function tao_field_mac_dinh(){
-		$arr= [
-			10=>[
-				require ZADMIN_DIR."/fields/fields-wordpress.php",
-				require ZADMIN_DIR."/fields/fields-wordpress-admin_settings.php",
-				require ZADMIN_DIR."/fields/fields-wordpress-admin_users.php",
-				require ZADMIN_DIR."/fields/fields-wordpress-taxonomy.php",
-				require ZADMIN_DIR."/fields/fields-wordpress-editor_and_media.php",
-			],
-			20=>[
-				require ZADMIN_DIR."/fields/fields-enqueue.php",
-				require ZADMIN_DIR."/fields/fields-enqueue-fonts.php",
-				require ZADMIN_DIR."/fields/fields-enqueue-wp_library.php",
-				require ZADMIN_DIR."/fields/fields-enqueue-custom_code.php",
-			],
-			30=>[
-				require ZADMIN_DIR."/fields/fields-quickcontact.php",
-				require ZADMIN_DIR."/fields/fields-quickcontact-menu_create.php",
-				require ZADMIN_DIR."/fields/fields-quickcontact-menu_settings.php",
-			],
-			40=>[
-				require ZADMIN_DIR."/fields/fields-smtpmailer.php",
-				require ZADMIN_DIR."/fields/fields-smtpmailer-smtp_settings.php",
-				require ZADMIN_DIR."/fields/fields-smtpmailer-test_email.php",
-			],
-			50=>[
-				require ZADMIN_DIR."/fields/fields-security.php",
-				require ZADMIN_DIR."/fields/fields-security-functions.php",
-			],
-			60=>[
-				require ZADMIN_DIR."/fields/fields-icons.php",
-				require ZADMIN_DIR."/fields/fields-icons-icons.php",
-			],
-			70=>[
-				require ZADMIN_DIR."/fields/fields-tools.php",
-				require ZADMIN_DIR."/fields/fields-tools-replace-image.php",
-			],
-			80=>[
-				require ZADMIN_DIR."/fields/fields-leechdata.php",
-				require ZADMIN_DIR."/fields/fields-leechdata-css_selector.php",
-				require ZADMIN_DIR."/fields/fields-leechdata-test_and_run.php",
-				require ZADMIN_DIR."/fields/fields-leechdata-woocommerce_css_selector.php",
-				require ZADMIN_DIR."/fields/fields-leechdata-woocommerce_test_and_run.php",
-				require ZADMIN_DIR."/fields/fields-leechdata-leech_data_settings.php",
-			],
-			90=>[
-				require ZADMIN_DIR."/fields/fields-acf.php",
-				require ZADMIN_DIR."/fields/fields-acf-acf_settings.php",
-			],
-			100=>[
+		
+		$arr[10] =[
+			require ZADMIN_DIR."/fields/fields-wordpress.php",
+			require ZADMIN_DIR."/fields/fields-wordpress-admin_settings.php",
+			require ZADMIN_DIR."/fields/fields-wordpress-admin_users.php",
+			require ZADMIN_DIR."/fields/fields-wordpress-taxonomy.php",
+			require ZADMIN_DIR."/fields/fields-wordpress-editor_and_media.php",
+		];
+
+		$arr[20] =[
+			require ZADMIN_DIR."/fields/fields-enqueue.php",
+			require ZADMIN_DIR."/fields/fields-enqueue-fonts.php",
+			require ZADMIN_DIR."/fields/fields-enqueue-wp_library.php",
+			require ZADMIN_DIR."/fields/fields-enqueue-custom_code.php",
+		];
+
+		$arr[30] =[
+			require ZADMIN_DIR."/fields/fields-quickcontact.php",
+			require ZADMIN_DIR."/fields/fields-quickcontact-menu_create.php",
+			require ZADMIN_DIR."/fields/fields-quickcontact-menu_settings.php",
+		];
+
+		$arr[40] =[
+			require ZADMIN_DIR."/fields/fields-smtpmailer.php",
+			require ZADMIN_DIR."/fields/fields-smtpmailer-smtp_settings.php",
+			require ZADMIN_DIR."/fields/fields-smtpmailer-test_email.php",
+		];
+		$arr[50] =[
+			require ZADMIN_DIR."/fields/fields-security.php",
+			require ZADMIN_DIR."/fields/fields-security-functions.php",
+		];
+
+		$arr[60] =[
+			require ZADMIN_DIR."/fields/fields-icons.php",
+			require ZADMIN_DIR."/fields/fields-icons-icons.php",
+		];
+
+		$arr[70] =[
+			require ZADMIN_DIR."/fields/fields-tools.php",
+			require ZADMIN_DIR."/fields/fields-tools-replace-image.php",
+		];
+
+		$arr[80] =[
+			require ZADMIN_DIR."/fields/fields-leechdata.php",
+			require ZADMIN_DIR."/fields/fields-leechdata-css_selector.php",
+			require ZADMIN_DIR."/fields/fields-leechdata-test_and_run.php",
+			require ZADMIN_DIR."/fields/fields-leechdata-woocommerce_css_selector.php",
+			require ZADMIN_DIR."/fields/fields-leechdata-woocommerce_test_and_run.php",
+			require ZADMIN_DIR."/fields/fields-leechdata-leech_data_settings.php",
+		];
+
+		$arr[90] =[
+			require ZADMIN_DIR."/fields/fields-acf.php",
+			require ZADMIN_DIR."/fields/fields-acf-acf_settings.php",
+		];
+
+		if(function_exists('WC')):
+			$arr[100] =[
 				require ZADMIN_DIR."/fields/fields-woocommerce.php",
 				require ZADMIN_DIR."/fields/fields-woocommerce-single_product.php",
 				require ZADMIN_DIR."/fields/fields-woocommerce-product_list.php",
@@ -71,8 +79,11 @@ class Zadmin_Fields extends Zadmin {
 				require ZADMIN_DIR."/fields/fields-woocommerce-currency.php",
 				require ZADMIN_DIR."/fields/fields-woocommerce-template_hook.php",
 				require ZADMIN_DIR."/fields/fields-woocommerce-other.php",
-			],
-			110=>[
+			];
+		endif;
+
+		if(in_array('Flatsome', [wp_get_theme()->name, wp_get_theme()->parent_theme])):
+			$arr[110] =[
 				require ZADMIN_DIR."/fields/fields-flatsome.php",
 				require ZADMIN_DIR."/fields/fields-flatsome-uxbuilder_elements.php",
 				require ZADMIN_DIR."/fields/fields-flatsome-flatsome_config.php",
@@ -80,12 +91,24 @@ class Zadmin_Fields extends Zadmin {
 				require ZADMIN_DIR."/fields/fields-flatsome-template_hook.php",
 				require ZADMIN_DIR."/fields/fields-flatsome-other.php",
 				require ZADMIN_DIR."/fields/fields-flatsome-support.php",
-			],
-			120=>[
+			];
+		endif;
+
+		if (in_array('elementor/elementor.php', apply_filters('active_plugins', get_option('active_plugins')))):
+			$arr[120] =[
 				require ZADMIN_DIR."/fields/fields-elementor.php",
 				require ZADMIN_DIR."/fields/fields-elementor-message.php"
-			]
+			];
+		endif;
+
+		
+
+		$arr[130] =[
+			require ZADMIN_DIR."/fields/fields-advanced.php",
+			require ZADMIN_DIR."/fields/fields-advanced-backup.php",
+			require ZADMIN_DIR."/fields/fields-advanced-restore.php"
 		];
+
 		foreach ($arr as $priority => $groups) {
 			foreach ($groups as $group) {
 
